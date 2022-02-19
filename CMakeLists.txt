@@ -1,0 +1,8 @@
+project(cata)
+cmake_minimum_required(VERSION 3.0)
+find_package(OpenCV REQUIRED)
+find_package(X11 REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(cata main.cpp)
+target_include_directories(cata PUBLIC ${X11_INCLUDE_DIR} ${X11_XTest_INCLUDE_PATH} ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(cata ${OpenCV_LIBS} ${X11_XTest_LIB} ${X11_LIBRARIES})
